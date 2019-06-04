@@ -5,12 +5,13 @@ import com.stackroute.domain.User;
 import com.stackroute.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserServiceImpl implements  UserService{
+public class UserServiceImpl implements  UserService {
 
     UserRepository userRepository;
 
@@ -31,19 +32,17 @@ public class UserServiceImpl implements  UserService{
     }
 
     @Override
-    public Optional<User> findById(int id) {
+    public Optional<User> findUserById(int id) {
         return userRepository.findById(id);
     }
 
-
-    /*
-   @Override
-    public List<User> findById(User user) {
-     return userRepository.findById(user.getId());
-    }*/
-
-    /* public List<User> deleteById(Integer id){
-       return userRepository.deleteById(id);
-
-    }*/
+    @Override
+    public void deleteUserById(int id) {
+       userRepository.deleteById(id);
+    }
+    @Override
+    public List<User> deleteAllUsers(){
+       // return userRepository.deleteAll();
+        return null;
+    }
 }

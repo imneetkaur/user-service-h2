@@ -11,5 +11,7 @@ public interface UserService {
 
     public User saveNewUser(User user);
     public List<User> getAllUsers();
-    public Optional<User> findById(int id);
+    public Optional<User> findUserById(int id);
+    public void deleteUserById(int id);
+    public List<User> deleteAllUsers();
 }
