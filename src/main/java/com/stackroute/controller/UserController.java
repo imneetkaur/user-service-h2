@@ -48,10 +48,11 @@ public class UserController {
         responseEntity= new ResponseEntity("Successfully deleted",HttpStatus.GONE);
         return responseEntity;
     }
-    /*@DeleteMapping("/user")
+    @DeleteMapping("/users")
     public ResponseEntity<?> deleteAllUsers(){
         ResponseEntity responseEntity;
-        responseEntity=new ResponseEntity<?>(userService.deleteAllUsers(),HttpStatus.GONE);
+        userService.deleteAllUsers();
+        responseEntity=new ResponseEntity("Successfully Deleted all Users",HttpStatus.GONE);
         return responseEntity;
-    }*/
+    }
 }

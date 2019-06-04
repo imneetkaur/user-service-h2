@@ -41,8 +41,7 @@ public class UserServiceImpl implements  UserService {
        userRepository.deleteById(id);
     }
     @Override
-    public List<User> deleteAllUsers(){
-       // return userRepository.deleteAll();
-        return null;
+    public void deleteAllUsers() {
+        userRepository.deleteAll();
     }
 }
